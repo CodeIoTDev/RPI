@@ -30,6 +30,7 @@ python3 -m venv myenv
 ls -l
 source myenv/bin/activate
 python3 -m pip install adafruit-circuitpython-dht
+pip install adafruit-blinka
 python 3.py
 
 
@@ -54,6 +55,7 @@ ls -l
 source myenv/bin/activate
 python3 -m pip install adafruit-circuitpython-dht
 python3 -m pip install requests
+pip install adafruit-blinka
 python3 code.py
 
 
