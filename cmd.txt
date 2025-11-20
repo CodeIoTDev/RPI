@@ -1,0 +1,132 @@
+LED and PUSH BUTTON
+
+Open Terminal and enter the following commands-
+(run below commands directly to cmd no cd desktop…)
+
+sudo apt-get update
+sudo apt-get install python3-rpi.gpio
+
+cd Desktop
+python exp1.py
+
+
+
+
+
+DHT11
+
+Open Terminal and use the following commands 
+
+sudo apt-get update
+sudo apt-get install python3-rpi.gpio
+
+(folder that contains the myenv folder after env creation should have the python code on the same level as myenv folder.)
+
+cd Desktop
+cd iot_3
+mkdir dht_test
+cd dht_test
+python3 -m venv myenv
+ls -l
+source myenv/bin/activate
+python3 -m pip install adafruit-circuitpython-dht
+python 3.py
+
+
+
+
+
+
+
+DHT11 THingspeak
+
+Open Terminal and enter the following commands-
+sudo apt-get update
+sudo apt-get install python3-rpi.gpio
+sudo apt-get install libgpiod2
+(run above command before doing cd Desktop)
+		
+cd iot_4
+mkdir dht_test
+cd dht_test
+python3 -m venv myenv
+ls -l
+source myenv/bin/activate
+python3 -m pip install adafruit-circuitpython-dht
+python3 -m pip install requests
+python3 code.py
+
+
+
+
+
+
+
+
+DHT11 and SERVO THINGSPEAK
+
+• Open Terminal and enter the following commands
+sudo apt-get update
+sudo apt-get install python3-rpi.gpio
+sudo apt-get install libgpiod2
+
+cd Desktop
+cd iot_5
+mkdir led_test
+cd led_test
+python3 -m venv myenv
+ls -l
+source myenv/bin/activate
+python 3 -m pip install requests
+python p.py
+
+
+
+
+
+
+
+
+
+MQTT
+
+Open Terminal and enter the following commands
+(GLOBALLY)
+sudo apt-get update
+sudo apt-get install python3-rpi.gpio
+sudo apt install mosquitto mosquitto-clients
+
+(LOCALLY MAIN TERMINAL (T-1))
+cd Desktop
+cd iot_6
+mkdir .venv
+cd .venv
+python3 -m venv .venv
+ls -l
+source .venv/bin/activate
+pip install paho-mqtt 
+
+• In a new terminal, use following commands (T - 2) (OPEN GLOBALLY)
+mosquitto_sub -h test.mosquitto.org -p 1883 -t test/led_control
+• This is the terminal for subscribing, we will call this the MQTT subscriber
+
+• In a new terminal, use following commands (T - 3) (OPEN GLOBALLY)
+mosquitto_pub -h test.mosquitto.org -p 1883 -t test/led_control -m "Hello, IoT World"
+• This is the terminal for publishing, we will call this the MQTT publisher
+
+• The message will be displayed on the subscriber terminal
+• Run the python code on the Main terminal python3 code.py
+
+• Send “ON” from publishing terminal
+• Message is displayed on subscribing terminal
+• Message is also displayed on main terminal
+• LED is turned on.
+
+• Send “OFF” from publishing terminal
+• Message is displayed on subscribing terminal
+• Message is also displayed on main terminal
+• LED is turned off.
+
+
+
+  
