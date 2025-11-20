@@ -25,5 +25,5 @@ try:
     time.sleep(0.1) # Small delay to debounce the button
 
 except KeyboardInterrupt:
-# Clean up GPIO settings before exiting
-GPIO.cleanup()
+  # Clean up GPIO settings before exiting
+  GPIO.cleanup()
